@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { IGenre, IMovie, IMovieDetails, IMovieListByGenre } from '@model/site.model';
 import { UntilDestroy } from '@ngneat/until-destroy';
 import { TmdbService } from '@services/tmdb.service';
-import { MoviesByGenreService } from '@state/movies-by-genre/movies-by-genre.service';
 import { WatchlistQuery } from '@state/watchlist/watchlist.query';
 import { WatchlistService } from '@state/watchlist/watchlist.service';
 

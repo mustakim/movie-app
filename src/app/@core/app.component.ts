@@ -2,10 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { EnumMovieCategory } from '@lib/site.enums';
 import { UntilDestroy } from '@ngneat/until-destroy';
 import { MoviesByCategoryService } from '@state/movies-by-category/movies-by-category.service';
-import { of, switchMap } from 'rxjs';
-import { IGenre, IMovieListByGenre } from '../@model/site.model';
+import { IGenre } from '../@model/site.model';
 import { TmdbService } from '../@services/tmdb.service';
-import { MoviesByGenreService } from '../@state/movies-by-genre/movies-by-genre.service';
 
 @UntilDestroy()
 @Component({
@@ -15,22 +13,18 @@ import { MoviesByGenreService } from '../@state/movies-by-genre/movies-by-genre.
 })
 export class AppComponent implements OnInit {
   title = 'Movie App';
-  genres: IGenre[];
   filterSettings = {
     sort_by: 'popularity.desc',
-    with_genres: 0
   };
 
   constructor(
     private tmdbService: TmdbService,
-    private moviesByGenreService: MoviesByGenreService,
     private moviesByCategoryService: MoviesByCategoryService
   ) { }
 
   ngOnInit(): void {
-    // getting movie genre list
-    // this.getMoviesGenre();
-
+    // getting movies genres
+    this.getMoviesGenre();
     // get trending movies
     this.getTrendingMovies();
     // get top rated movies
@@ -44,22 +38,8 @@ export class AppComponent implements OnInit {
       .getGenreList()
       .pipe()
       .subscribe((res: any) => {
-        this.genres = res.genres;
-        if (this.genres?.length) {
-          this.genres.forEach((genre) => {
-            this.getMoviesByGenre(genre);
-          });
-        }
-      });
-  }
-
-  getMoviesByGenre(genre: IGenre) {
-    this.filterSettings.with_genres = genre.id;
-    this.tmdbService
-      .getDiscoverMovie(this.filterSettings)
-      .pipe()
-      .subscribe((res: any) => {
-        this.moviesByGenreService.add({ id: genre.id, genre: genre, movies: res.results })
+        if (res?.genres?.length)
+          localStorage.setItem('genres', JSON.stringify(res?.genres))
       });
   }
 

@@ -8,18 +8,21 @@ import { TranslocoRootModule } from './transloco-root.module';
 import { RouterModule } from '@angular/router';
 import { AppRoutes } from './app.routing';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
+import { MovieSearchComponent } from '@module/movie-search/movie-search.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, MovieSearchComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     TranslocoRootModule,
     RouterModule.forRoot(AppRoutes),
-    AkitaNgDevtools.forRoot()
+    AkitaNgDevtools.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

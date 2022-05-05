@@ -1,9 +1,9 @@
 <div class="container mx-auto px-4 pt-16">
   <ng-container *ngFor="let moviesCategory of moviesByCategory">
     <div class="popular-movies mt-6">
-      <h2 class="uppercase tracking-wider text-orange-500 text-xl font-semibold genre-name inline-block">
+      <h2 class="uppercase tracking-wider text-orange-500 text-xl font-semibold category-name inline-block">
         {{ moviesCategory?.id }}</h2>
-      <div class="cursor-pointer inline-block float-right	" (click)="redirectingToCategoryPage(moviesCategory)">View All
+      <div class="cursor-pointer inline-block view-all" (click)="redirectingToCategoryPage(moviesCategory)">View All
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
         <ng-container *ngFor="let movie of moviesCategory.movies | slice:0:10;">

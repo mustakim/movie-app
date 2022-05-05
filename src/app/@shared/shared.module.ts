@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GenreNamePipe } from './pipes/genreName.pipe';
 import { ImagePreloadDirective } from './directives/image-preload.directive';
 import { SafePipe } from './pipes/safe.pipe';
+import { GenreNamePipe } from './pipes/genreName.pipe';
 
 
 @NgModule({
   declarations: [
-    GenreNamePipe,
     ImagePreloadDirective,
-    SafePipe
+    SafePipe,
+    GenreNamePipe
   ],
   imports: [CommonModule],
-  exports: [GenreNamePipe, ImagePreloadDirective, SafePipe]
+  exports: [ImagePreloadDirective, SafePipe, GenreNamePipe]
 })
 export class SharedModule { }

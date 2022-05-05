@@ -1,5 +1,13 @@
-.genre-name {
+.category-name {
   padding: 5px 10px;
   font-size: 30px;
   color: #fd8247;
+}
+
+.view-all {
+  border: 1px #fd8247 solid;
+  padding: 5px 8px;
+  position: absolute;
+  right: 12.5%;
+  border-radius: 8px;
 }

@@ -71,4 +71,10 @@ export class TmdbService {
       `${this._BASE_URL}${TMDB_API_CONSTANT.UPCOMING}?api_key=${this._API_KEY}&language=en-US&append_to_response=credits,videos,images&page=${pageNumber}`
     );
   }
+
+  searchMovie(query: string, releaseYear?: string) {
+    return this.httpClient.get<IMovieDetails>(
+      `${this._BASE_URL}${TMDB_API_CONSTANT.SEARCH}?api_key=${this._API_KEY}&language=en-US&append_to_response=credits,videos,images&query=${query}&primary_release_year=${releaseYear}`
+    );
+  }
 }

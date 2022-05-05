@@ -6,4 +6,5 @@ export const TMDB_API_CONSTANT = {
   TRENDING: 'trending/movie/day',
   TOP_RATED_MOVIES: 'movie/top_rated',
   UPCOMING: 'movie/upcoming',
+  SEARCH: 'search/movie'
 };

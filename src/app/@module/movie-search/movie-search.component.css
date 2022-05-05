@@ -1,0 +1,4 @@
+.movie-list-card {
+  max-height: 50vh;
+  overflow: auto;
+}
