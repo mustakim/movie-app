@@ -3,7 +3,6 @@ import { UntilDestroy } from '@ngneat/until-destroy';
 import { TmdbService } from '@services/tmdb.service';
 import { Router } from '@angular/router';
 import { IMovie } from '@model/site.model';
-
 @UntilDestroy()
 @Component({
   selector: 'app-movie-search',
