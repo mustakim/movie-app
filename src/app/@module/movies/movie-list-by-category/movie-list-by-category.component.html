@@ -1,0 +1,19 @@
+<ng-container *ngIf="!isMovieDetails; else movieDateils">
+  <div class="container mx-auto px-4 pt-16">
+    <div class="popular-movies">
+      <h2 class="uppercase tracking-wider text-blue-500 text-4xl text-center font-semibold mb-10	">
+        {{ moviesByCategory?.id }}</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8"
+        *ngIf="moviesByCategory?.movies?.length">
+        <ng-container
+          *ngFor="let movie of moviesByCategory.movies | paginate: {  itemsPerPage: 20, currentPage: currentPage, totalItems: moviesByCategory.total_results }">
+          <app-movies-list-item [movie]="movie"></app-movies-list-item>
+        </ng-container>
+        <pagination-controls (pageChange)="onPageChange($event)" class="custom-pagination"></pagination-controls>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-template #movieDateils>
+  <app-movie-details [movieId]="movieId"></app-movie-details>
+</ng-template>

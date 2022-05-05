@@ -1,0 +1,17 @@
+<nav class="border-b border-gray-800">
+  <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between px-4 py-1">
+    <img class="cursor-pointer" src="assets/svg/logo.svg" [routerLink]="'/'">
+    <div class="flex flex-col md:flex-row items-center">
+      <div class="md:ml-4 mt-3 md:mt-0 cursor-pointer" [routerLink]="'/watchlist'"> Watch List </div>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+<footer class="border border-t border-gray-800 mt-6">
+  <div class="container mx-auto text-sm px-4 py-6">
+    <div class="mb-3">Powered by</div>
+    <a href="https://www.themoviedb.org/documentation/api" class="underline hover:text-gray-300 inline-block">
+      <img width="300px" src="assets/svg/tmdb-long.svg">
+    </a>
+  </div>
+</footer>

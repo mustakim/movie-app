@@ -1,0 +1,46 @@
+.card {
+  cursor: pointer;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.options {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.options > i {
+  margin: 3px;
+  color: orange;
+}
+
+.poster-image-size {
+  width: 220px !important;
+  height: 330px !important;
+}
+
+.watchlist-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 0.5rem;
+  display: flex;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  color: #6e6d7a;
+  pointer-events: auto;
+  background-color: #88a9a647;
+  border-radius: 0 0 10px 0;
+}
+
+.watchlist-btn:hover {
+  background-color: #98a7a5b0;
+}
+
+/* ea4c89 */

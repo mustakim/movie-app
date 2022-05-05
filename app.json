@@ -1,0 +1,6 @@
+{
+  "name": "Movie App",
+  "description": "Movie App",
+  "repository": "https://github.com/mustakim/movie-app",
+  "keywords": ["angular", "jest", "transloco"]
+}

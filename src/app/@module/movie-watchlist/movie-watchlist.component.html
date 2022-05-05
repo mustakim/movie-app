@@ -1,0 +1,10 @@
+  <div class="container mx-auto px-4 pt-16 page-container">
+    <div class="popular-movies">
+      <h2 class="uppercase tracking-wider text-blue-500 text-4xl text-center font-semibold mb-10	"> Watch List</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8" *ngIf="watchListMovies?.length">
+        <ng-container *ngFor="let watchList of watchListMovies">
+          <app-movies-list-item [movie]="watchList.movie"></app-movies-list-item>
+        </ng-container>
+      </div>
+    </div>
+  </div>

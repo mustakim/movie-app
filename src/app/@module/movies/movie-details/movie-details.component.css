@@ -1,0 +1,10 @@
+.poster-image-size {
+  width: 220px !important;
+  height: 330px !important;
+}
+
+.watchlist-icon {
+  width: 34px;
+  height: 34px;
+  margin-right: 0.5rem;
+}
